@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }4r5
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="sv.js"></script>
+    <script type="text/javascript" charset="utf-8" src="interface.js"></script>
+    <script>
+			$( function() {
+				$( ".widget input[type=submit], .widget a, .widget button" ).button();
+			} );
+    </script>
+    <script>
+        $( function() {
+          $( "#speed" ).selectmenu();
+       
+          $( "#files" ).selectmenu();
+       
+          $( "#number" )
+            .selectmenu()
+            .selectmenu( "menuWidget" )
+              .addClass( "overflow" );
+       
+          $( "#salutation" ).selectmenu();
+        } );
+    </script>
+    		<script>
+          $( function() {
+            $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          } );
+            
+        </script>
+    <style>
+      .content {
+        max-width: 500px;
+        margin: auto;
+      }
+      </style>
+      <style>
+        fieldset {
+          border: 0;
+        }
+        label {
+          display: block;
+          margin: 30px 0 0 0;
+        }
+        .overflow {
+          height: 200px;
+        }
+      </style>
+
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">TreliçaApp</h1>
+          
+      </ion-header-bar>
+      <ion-content>
+        <form id="addForca" onsubmit="insertAction()">
+        <div class="content"> 
+        <input id="image" type="image" src="template1.png" alt="template 1" width="200">
+        <h3>Adicione uma força a um nó</h3>
+        </br>
+        <b><span class="w3-text-black" >Nó:</span></b>
+        <select id="no">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        </br></br>
+        <b><span for="eixo" class="w3-text-black" >Eixo:</span></b>
+        <select id="eixo">
+            <option value="x">X</option>
+            <option value="y">Y</option>
+            </select>
+        </br></br>
+        <b><span class="w3-text-black">Sentido:</span></b>
+        <select id="sentido">
+            <option value="p">Positivo</option><!-- Eixo X: esquerda; Eixo y: Cima; -->
+            <option value="n">Negativo</option>
+            </select>
+            <span class="w3-text-black" >(Considere plano cartesiano)</span>
+        </br></br>
+        <b><span class="w3-text-black" >Intensidade:</span></b>
+        <input type="text" placeholder="100" id="intensidade" name="intensidade" required>
+        <span class="w3-text-black" >(Apenas números inteiros entre 1 e 1000000)</span></br></br>
+
+        <input class="ui-button ui-widget ui-corner-all" type="submit" value="Adicionar">
+        </div>
+      </form>
+      <form id="calc" onsubmit="submitAction()">
+      </br>
+      <input class="ui-button ui-widget ui-corner-all" type="submit" value="Calcular">
+      </br></br>
+      <b><span class="w3-text-black" >Distribuição das forças (método dos nós):</span></b>
+      </br>
+      <input id="image" type="image" src="distrib1.png" alt="Distribuicao 1" width="200">
+      </br></br>
+      <a class="ui-button ui-widget ui-corner-all" href="/index.html">Voltar</a>
+      </form>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

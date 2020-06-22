@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }4r5
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <script>
+			$( function() {
+				$( ".widget input[type=submit], .widget a, .widget button" ).button();
+			} );
+    </script>
+ <!-- <style>
+    body {
+  background: url(https://cdn.wallpapersafari.com/28/45/hFJubS.png) no-repeat center bottom fixed;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+background-color: #ffe6e9;
+}
+  </style> -->
+
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">TreliçaApp</h1>
+          
+      </ion-header-bar>
+      <ion-content>
+        <div>
+        <h2>Escolha um template:</h2>
+        
+        <input id="image" type="image" src="template1.png" alt="template 1" width="100">
+        </br>
+        <a class="ui-button ui-widget ui-corner-all" href="/add1.html" >Template 1</a>
+        <!--<input class="ui-button ui-widget ui-corner-all" type="submit" value="Template 1">-->
+        <!-- <button type="button">Template 1</button>-->
+        </br></br>
+        <input id="image" type="image" src="template2.png" alt="template 2" width="100">
+        </br>
+        <a class="ui-button ui-widget ui-corner-all" href="/add2.html">Template 2</a>
+        </br></br>
+        <input id="image" type="image" src="template3.png" alt="template 3" width="100">
+        </br>
+        <a class="ui-button ui-widget ui-corner-all" href="/add3.html">Template 3</a>
+        </br></br>
+        <input id="image" type="image" src="template4_1.png" alt="template 4" width="100">
+        </br>
+        <a class="ui-button ui-widget ui-corner-all" href="/add4.html">Template 4</a>
+        </br></br>
+        <input id="image" type="image" src="template5_1.png" alt="template 5" width="100">
+        </br>
+        <a class="ui-button ui-widget ui-corner-all" href="/add5.html">Template 5</a>
+        </br></br>
+        </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
